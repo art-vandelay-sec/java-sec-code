@@ -35,7 +35,8 @@ public class WebSocketsCmdEndpoint extends Endpoint implements MessageHandler.Wh
             InputStream inputStream = process.getInputStream();
             StringBuilder stringBuilder = new StringBuilder();
             int i;
-            while ((i = inputStream.read()) != -1) stringBuilder.append((char) i);
+            //TODO
+//             while ((i = inputStream.read()) != -1) stringBuilder.append((char) i);
             inputStream.close();
             process.waitFor();
             session.getBasicRemote().sendText(stringBuilder.toString());
